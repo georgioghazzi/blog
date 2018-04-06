@@ -1,0 +1,18 @@
+<% include ./partials/header %>
+
+<div class="container form">
+
+
+<div class=jumbotron>
+<h1>Reset Your Passord</h1>
+</div>
+<form action="/forgot" method="POST">	
+<div class="form-group">
+    <input class="form-control"  name="email" placeholder="Email" type="email">
+    </div>
+    <div class="form-group">
+    <button class="btn btn-primary">Reset Password</button>
+    </div>
+</form>
+
+<% include ./partials/footer %>

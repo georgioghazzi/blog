@@ -1,0 +1,63 @@
+<% include ../partials/header %> 
+
+
+<!-- Picture And Header -->
+<header class="masthead"  style="background-image: url('img/post-bg.jpg')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="page-heading">
+              <h1>The Posts.</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+
+
+
+
+ <div class="container">
+     <header class="jumbotron">
+         <div class="container">
+         <center>
+             <h1>The Posts!</h1>
+             <% if(currentUser){%> <p>
+                <a class="btn btn-primary btn-large" href="/posts/new">Add New post</a></center>
+             </p>
+             <% } %>
+         </div>
+     </header>
+     
+     <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+        <% posts.forEach(function(post){ %>
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail">
+                   <img src="<%= post.image %>">
+                   <div class="caption">
+                       <h4><%= post.title %></h4>
+                   </div>
+                   <p>
+                       <a href="/posts/<%= post._id %>" class="btn btn-primary">More Info</a>
+                   </p>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+
+
+<!-- Body -->
+<div class=container>
+
+</div>
+
+
+
+
+
+
+<% include ../partials/footer %>

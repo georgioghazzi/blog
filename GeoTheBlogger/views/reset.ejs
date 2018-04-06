@@ -1,0 +1,46 @@
+<% include ./partials/header %>
+
+<div class="container form">
+
+
+<div class=jumbotron>
+<h1>Reset Your Passord</h1>
+</div>
+<form action="/reset/<%= token %>" method="POST">	
+<div class="form-group">
+    <label for="Password">Password</label>
+    <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+  </div>
+   <div class="form-group">
+    <label for="confirmPassword">Confirm Password</label>
+    <input type="password" class="form-control" id="Confirmpassword" name="Confirmpassword" placeholder="Password">
+  </div>
+    <button class="btn btn-primary">Reset Password</button>
+    </div>
+</form>
+
+
+
+
+<script type="text/javascript">
+
+var password = document.getElementById("password")
+  , confirm_password = document.getElementById("Confirmpassword");
+
+function validatePassword(){
+  if(password.value != confirm_password.value) {
+    confirm_password.setCustomValidity("Passwords Don't Match");
+  } else {
+    confirm_password.setCustomValidity('');
+    
+  }
+}
+
+password.onchange = validatePassword;
+confirm_password.onkeyup = validatePassword;
+
+</script>
+
+
+
+<% include ./partials/footer %>
